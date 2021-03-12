@@ -4,8 +4,8 @@ global data
 
 
 def greeting():
-    # just greetings
-    hellowords = '''
+    # Just greetings
+    hello_words = '''
     ----------------
     xx   xx    xx
      xx xx   xx  xx
@@ -17,10 +17,11 @@ def greeting():
     This is an amazing game.
     Just try.
     '''
-    print(hellowords)
+    print(hello_words)
+
 
 def draw_field(data):
-    # draw field with boundaries
+    # Draw field with boundaries
     print()
     for row in data:
         print('', end='|')
@@ -31,7 +32,7 @@ def draw_field(data):
 
 
 def check_input(input_data):
-    # check input for correct format: two spaced integers [0-2]
+    # Check input for correct format: two spaced integers [0-2]
     global data
     input_array = input_data.split()
     if len(input_array) != 2:
@@ -54,7 +55,7 @@ def check_input(input_data):
 
 
 def make_turn():
-    # get, check and return correct user data
+    # Get, check and return correct user data
     while True:
         input_data = input('Введите координаты: ')
         res = check_input(input_data)
@@ -63,8 +64,9 @@ def make_turn():
         else:
             continue
 
+
 def check_win(player):
-    # check all win conditions
+    # Check all win conditions
     win1 = True
     win2 = True
     for i in range(3):
@@ -83,8 +85,9 @@ def check_win(player):
         draw_field(data)
         return True
 
+
 def play():
-    # main algorithm
+    # Main algorithm
     greeting()
     turn = 1
     row = ["-"] * 3

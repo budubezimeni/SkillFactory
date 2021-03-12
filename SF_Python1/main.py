@@ -23,11 +23,14 @@ def greeting():
 def draw_field(data):
     # Draw field with boundaries
     print()
+    print('  0 1 2')
+    i = 0
     for row in data:
-        print('', end='|')
+        print('%d' % i, end='|')
         for val in row:
             print(val, end='|')
         print()
+        i +=1
     print()
 
 

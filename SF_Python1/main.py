@@ -2,7 +2,9 @@
 # Крестики-нолики
 global data
 
+
 def greeting():
+    # just greetings
     hellowords = '''
     ----------------
     xx   xx    xx
@@ -27,7 +29,9 @@ def draw_field(data):
         print()
     print()
 
+
 def check_input(input_data):
+    # check input for correct format: two spaced integers [0-2]
     global data
     input_array = input_data.split()
     if len(input_array) != 2:
@@ -48,7 +52,9 @@ def check_input(input_data):
     else:
         return [int(s) for s in input_array]
 
+
 def make_turn():
+    # get, check and return correct user data
     while True:
         input_data = input('Введите координаты: ')
         res = check_input(input_data)
@@ -58,6 +64,7 @@ def make_turn():
             continue
 
 def check_win(player):
+    # check all win conditions
     win1 = True
     win2 = True
     for i in range(3):
@@ -77,6 +84,8 @@ def check_win(player):
         return True
 
 def play():
+    # main algorithm
+    greeting()
     turn = 1
     row = ["-"] * 3
     global data
@@ -100,5 +109,4 @@ def play():
             break
 
 
-greeting()
 play()
